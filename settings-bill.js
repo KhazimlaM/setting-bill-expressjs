@@ -41,13 +41,13 @@ module.exports = function SettingsBill() {
             }
             else if (action === 'call') {
                 cost = callCost;
+                
+                actionList.push({
+                    type: action,
+                    cost,
+                    timestamp: moment(new Date()).fromNow()
+                });
             }
-
-            actionList.push({
-                type: action,
-                cost,
-                timestamp: moment(new Date()).fromNow()
-            });
         }
 
     }
