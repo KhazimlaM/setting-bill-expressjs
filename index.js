@@ -2,8 +2,6 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const SettingsBill = require('./settings-bill');
-const moment = require('moment');
-moment().format();
 
 const app = express();
 const settingsBill = SettingsBill();

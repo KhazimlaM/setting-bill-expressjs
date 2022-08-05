@@ -1,3 +1,4 @@
+const { invalid } = require('moment');
 const moment = require('moment');
 moment().format();
 
@@ -32,16 +33,17 @@ module.exports = function SettingsBill() {
             let cost = 0;
             if (action === 'sms') {
                 cost = smsCost;
-
                 actionList.push({
                     type: action,
                     cost,
                     timestamp: moment(new Date()).fromNow()
                 });
+
             }
+           
             else if (action === 'call') {
                 cost = callCost;
-                
+
                 actionList.push({
                     type: action,
                     cost,
@@ -64,10 +66,11 @@ module.exports = function SettingsBill() {
             // check this is the type we are doing the total for 
             if (action.type === type) {
                 // add the action to the list
+                // filteredActions.filter(undefined);
                 filteredActions.push(action);
             }
         }
-
+        // filteredActions.filter(undefined);
         return filteredActions;
 
         // return actionList.filter((action) => action.type === type);
@@ -75,7 +78,8 @@ module.exports = function SettingsBill() {
 
     function getTotal(type) {
         let total = 0;
-        // loop through all the entries in the action list 
+        // loop through all the entries in the action list st[index];
+            // check this is the type we ar
         for (let index = 0; index < actionList.length; index++) {
             const action = actionList[index];
             // check this is the type we are doing the total for 
