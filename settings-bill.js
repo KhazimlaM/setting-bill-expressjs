@@ -33,6 +33,9 @@ module.exports = function SettingsBill() {
             let cost = 0;
             if (action === 'sms') {
                 cost = smsCost;
+                if(cost == undefined){
+                    return 
+                }
                 actionList.push({
                     type: action,
                     cost,
@@ -43,7 +46,9 @@ module.exports = function SettingsBill() {
            
             else if (action === 'call') {
                 cost = callCost;
-
+                if(cost == undefined){
+                    return 
+                }
                 actionList.push({
                     type: action,
                     cost,
